@@ -1,0 +1,40 @@
+.user-info{
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    border-bottom:1px solid gold;
+    .flr{
+        margin-right:20px;
+    }
+    .user-name{
+        margin: 0 3px;
+        color:gold;
+    }
+}
+.breadcrumb{
+    position: relative;
+    width: 12.5%;
+    font-size: 16px;
+    text-align: center;
+    a{
+        text-decoration: none;
+    }
+    &::after{
+        content:"";
+        position: absolute;
+        left:50%;
+        bottom: -24px;
+        transform: translateX(-50%);
+        border:12px solid transparent;
+        border-top:12px solid #fff;
+    }
+}
+.weather-wrapper{
+    height: 40px;
+    line-height: 40px;
+    .weather-detail{
+        font-size: 15px;
+        margin:0 20px;
+        font-weight: 700;
+    }
+}
