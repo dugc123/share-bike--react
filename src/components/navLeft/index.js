@@ -8,7 +8,7 @@ import "./index.less"
 
 const SubMenu = Menu.SubMenu;
 
-//===================================================================
+
 class NavLeft extends Component {
     
     clickMenuItem = ({ item, key, keyPath }) => {
