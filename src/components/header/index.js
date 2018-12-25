@@ -9,7 +9,7 @@ import {connect} from "react-redux"
 class Header extends Component {
     state={
         weather:"今天有点冷",
-        time: "2018-10-10 08:00:05"
+        time: "2016-10-10 08:00:05"
     }
     getTime=()=>{
         setInterval(()=>{

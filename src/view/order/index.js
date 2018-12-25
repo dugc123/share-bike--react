@@ -40,15 +40,15 @@ class Order extends Component {
         console.log(this.props.form.getFieldsValue())
         const status = this.props.form.getFieldsValue()
         Modal.info({
-        title: '查询城市订单详情',
-        content: (
-        <div>
-            <p>城市{status.city}</p>
-            {/* <p>{status.times}</p> */}
-            <p>订单状态：{status.status}</p>
-        </div>
-        ),
-        onOk() {},
+            title: '查询城市订单详情',
+            content: (
+            <div>
+                <p>城市{status.city}</p>
+                {/* <p>{status.times}</p> */}
+                <p>订单状态：{status.status}</p>
+            </div>
+            ),
+            onOk() {},
     });
     }
     //清空表单数据
@@ -98,10 +98,10 @@ class Order extends Component {
     //订单详情
     handleDone =()=>{
         let selectedItem = this.state.selectedItem
+        // console.log(selectedItem)       
         if (selectedItem){
             axios.get("/order/ebike_info", { id: selectedItem[0].id}).then(res=>{
                 // console.log(res)
-                this.getData()
                 this.setState({
                     isShowModal:true,
                     endItem : res.result,
@@ -116,7 +116,7 @@ class Order extends Component {
         let id = this.state.selectedItem[0].id
         axios.get('/order/finish_order',{id}).then(res=>{
             if (res.code === "0") {
-                // console.log(132)
+                this.getData()
                 message.success("删除订单成功")
                 this.setState({
                     isShowModal:false
@@ -188,6 +188,7 @@ class Order extends Component {
                 key: 'user_pay'
             }
         ]
+        //设置分页
         const pagination = {
             total: this.state.total,
             pageSize:10,
@@ -197,6 +198,7 @@ class Order extends Component {
                 this.getData()
             }
         }
+        //设置单选框
         const rowSelection = {
             type:"radio",
             onChange:(selectedRowKeys, selectedRows) =>{
@@ -256,12 +258,15 @@ class Order extends Component {
                     columns={columns}  pagination={pagination} 
                     loading={this.state.loading} rowSelection={rowSelection}/>
             </Card>
-                <Modal title="Basic Modal"
+                < Modal title = "车辆详情"
                     visible={this.state.isShowModal}
                     onOk={this.handleEnd}
                     onCancel={()=>this.setState({
-                        isShowModal:false
-                    })}>
+                    isShowModal:false
+                    })}
+                    okText = "确认"
+                    cancelText = "取消"
+                    >
                     <ul className='ul-data'>
                         <li>
                             <span className='car-num li-title'>车辆编号：</span>

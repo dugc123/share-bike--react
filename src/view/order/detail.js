@@ -59,7 +59,7 @@ class Detatil extends Component {
         map.addOverlay(startMarker); // 将标注添加到地图中
         map.addOverlay(endMarker); // 将标注添加到地图中
         map.addOverlay(polyline); // 将标注添加到地图中
-        this.map.centerAndZoom(startBmapPoint, 15);
+        this.map.centerAndZoom(startBmapPoint, 12); // 设置中心点坐标和地图级别  
 
     }
     //绘制服务区

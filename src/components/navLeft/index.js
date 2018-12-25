@@ -8,7 +8,7 @@ import "./index.less"
 
 const SubMenu = Menu.SubMenu;
 
-
+//===================================================================
 class NavLeft extends Component {
     
     clickMenuItem = ({ item, key, keyPath }) => {
@@ -16,7 +16,6 @@ class NavLeft extends Component {
     const text = item.props.children.props.children
     // console.log(this.props.dispatch({type:"CHANGE_MENU_ITEM",text}))
     this.props.action.changeMenuItem(text)
-    
 }
 render() {
     return (
@@ -28,7 +27,7 @@ render() {
                     <Link to="/admin/order">订单管理</Link>
                     </Menu.Item>
                 </SubMenu>
-                < SubMenu title={<span><Icon type="smile" /><span>图形展示</span></span>} >
+                <SubMenu title={<span><Icon type="smile" /><span>图形展示</span></span>} >
                     < Menu.Item key = "/admin/echarts/pie" >
                         <Link to="/admin/echarts/pie">饼图</Link>
                     </Menu.Item>
@@ -46,6 +45,6 @@ render() {
 export default connect(
     null,
     (dispatch)=>({
-       action:bindActionCreators(actions,dispatch)
+        action:bindActionCreators(actions,dispatch)
     })
 )(NavLeft) 

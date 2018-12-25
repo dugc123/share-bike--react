@@ -20,7 +20,7 @@ export function formatData(unix){
         baseURL: "https://www.easy-mock.com/mock/5bbb8bf854d6771eb592838d",
         timeout:100000
     })
-    export const xhr = {
+    const xhr = {
         get(url,data,config){
             return new Promise((resolve,reject)=>{
                 instance.get(url, {
