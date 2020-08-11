@@ -19,7 +19,7 @@ class NotMatch extends Component {
                     <strong>或许您可以选择</strong>
                     <ul>
                         <li><Link to="/admin/home">返回首页</Link></li>
-                        <li><span onClick={()=>history.go(0)}>刷新当前页面</span></li>
+                        <li><span onClick={()=>history.push("/admin/home")}>刷新当前页面</span></li>
                         <li><span onClick={()=>history.go(-1)}>返回上一级</span></li>
                     </ul>
                 </div>

@@ -7,3 +7,19 @@
 .detailBtn{
     margin-right:12px;
 }
+
+@media screen {
+    .table {
+         overflow-x: hidden;
+         overflow-y: auto;
+         width: 1000px;
+         height: 780px;
+    }
+}
+
+/* 印刷时的css，overflow-y使用默认值，不设定高度*/
+@media print {
+    .table {
+        width:1000px;
+    }
+}
